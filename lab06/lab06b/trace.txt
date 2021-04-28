@@ -1,0 +1,14 @@
+
+return ( 0 + 10 * toDecimalR( 6/2 ) )
+       ( 0 + 10 * toDecimalR( 3 )
+                  ( 1 + 10 * toDecimalR( 3 / 2 ) )
+                  ( 1 + 10 * toDecimalR( 1 )
+                  ( 1 + 10 * ( 1 + 10 * toDecimal ( 0 ) ) )
+
+       ( 0 + 10 * ( 1 + 10 * ( 1 + 10 * 0 ) )
+
+       ( 0 + 10 * ( 1 + 10 * 1 )
+
+       ( 10 * 11 )
+ 
+return 110

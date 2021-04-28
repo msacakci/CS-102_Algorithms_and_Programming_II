@@ -1,0 +1,44 @@
+package hangmangame.extras;
+
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import cs102.hangman.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+/**
+ * @author Metehan Saçakçý
+ * @version 11.04.2020
+ * TextFieldControlPanel
+ */
+public class TextFieldControlPanel extends JPanel implements ActionListener
+{
+   //properties
+   JPanel panel;
+   Hangman hangman;
+   JTextField textField;
+   
+   //constructors
+   public TextFieldControlPanel( Hangman hangman, JTextField textField )
+   {
+      //super();
+      this.hangman = hangman;
+      this.textField = textField;
+      textField.addActionListener( this );
+      
+      add( textField );
+   }   
+   //methods   
+   public void actionPerformed( ActionEvent event )
+   {
+      //Process the textfield
+      if( event.getSource() == textField )
+      {
+         for( int index = 0; index < textField.getText().length(); index++ )
+         {
+            hangman.tryThis( textField.getText().charAt( index ));
+         }
+         textField.setText( "");
+      }   
+   }   
+}   

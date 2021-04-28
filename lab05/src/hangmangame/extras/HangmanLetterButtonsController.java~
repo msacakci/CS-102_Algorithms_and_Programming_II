@@ -1,0 +1,38 @@
+package hangmangame.extras;
+
+import java.awt.event.*;
+import javax.swing.*;
+import cs102.hangman.HangmanModel;
+
+/**
+ * @author Metehan Saçakçý
+ * 
+ * 
+ */
+public class HangmanLetterButtonsController implements ActionListener
+{
+   //properties
+   HangmanModel hangmanModel;
+
+   //constructors
+   public HangmanLetterButtonsController( HangmanModel hangmanModel )
+   {
+      this.hangmanModel = hangmanModel;
+   }
+   
+   //methods
+   @Override
+   public void actionPerformed( ActionEvent event )
+   {
+      if( !(hangmanModel.isGameOver()))
+      {
+         JButton b = ( (JButton) event.getSource() );
+         char letter = b.getText().charAt( 0 );
+         hangmanModel.tryThis( letter );
+         if( hangmanModel.getNumOfIncorrectTries() < 6 )
+         {
+            b.setEnabled( false );
+         }   
+      }   
+   }   
+}   

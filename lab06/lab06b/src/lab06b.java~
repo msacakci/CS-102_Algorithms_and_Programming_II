@@ -1,0 +1,21 @@
+/**
+ * @author Metehan Saçakçý
+ * @version 28.04.2020
+ * to decimal counter
+ */
+public class lab06b
+{
+   public static int toDecimalR (int decimalNumber) 
+   { 
+      if (decimalNumber == 0)  
+         return 0;  
+      else
+         return (decimalNumber % 2 + 10 * toDecimalR(decimalNumber / 2)); 
+                
+   }  
+   public static void main( String[] args )
+   {
+      System.out.println( toDecimalR( 1) );
+      System.out.println( 1 % 2 );
+   }   
+}   
